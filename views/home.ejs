@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs")-%>
+
+<h1>Home</h1>
+<p><%=homeContent%></p>
+
+<% postArr.forEach(function(post) { %>
+    <h2><%= post.title %></h2>
+    <p><%= post.body.substring(0,100)+ "....." %>
+       <a href="/posts/<%= post.title %>">Read more</a>
+    </p>
+    
+<% }) %>
+
+<%-include("partials/footer.ejs")-%>
+
+<!-- alternate mthd for array traverssal :
+array.forEach( function(element) {
+    console.llog(element) ;
+}) -->
